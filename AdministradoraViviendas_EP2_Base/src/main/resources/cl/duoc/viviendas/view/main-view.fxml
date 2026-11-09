@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cl.duoc.viviendas.controller.RegistroViviendasController">
+   <children>
+      <ComboBox fx:id="cmbTipo" layoutX="150.0" layoutY="121.0" nodeOrientation="LEFT_TO_RIGHT" onAction="#cambiarTipoVivienda" prefHeight="26.0" prefWidth="180.0" promptText="Seleccione...">
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor></ComboBox>
+      <TextField fx:id="txtCodigo" layoutX="150.0" layoutY="164.0" prefHeight="26.0" prefWidth="206.0" />
+      <TextField fx:id="txtSuperficie" layoutX="150.0" layoutY="212.0" prefHeight="26.0" prefWidth="94.0" />
+      <TextField fx:id="txtHabitaciones" layoutX="150.0" layoutY="252.0" prefHeight="26.0" prefWidth="94.0" />
+      <Label layoutX="17.0" layoutY="125.0" prefHeight="18.0" prefWidth="81.0" text="Tipo:" />
+      <Label layoutX="17.0" layoutY="169.0" text="Codigo:" />
+      <Label layoutX="17.0" layoutY="212.0" prefHeight="26.0" prefWidth="109.0" text="Superficie (m²):" />
+      <Label layoutX="17.0" layoutY="256.0" prefHeight="18.0" prefWidth="125.0" text="Habitaciones:" />
+      <TableView fx:id="tablaViviendas" layoutX="382.0" layoutY="99.0" prefHeight="421.0" prefWidth="486.0">
+        <columns>
+          <TableColumn fx:id="colTipo" prefWidth="96.199951171875" text="Tipo" />
+          <TableColumn fx:id="colCodigo" prefWidth="94.20001220703125" text="Codigo" />
+            <TableColumn fx:id="colSuperficie" minWidth="8.20001220703125" prefWidth="99.5999755859375" text="Superficie (m²):" />
+            <TableColumn fx:id="colHabitaciones" minWidth="3.20001220703125" prefWidth="83.20001220703125" text="Habitaciones" />
+            <TableColumn fx:id="colCosto" prefWidth="114.4000244140625" text="Costo arriendo" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnRegistrar" layoutX="289.0" layoutY="537.0" mnemonicParsing="false" onAction="#registrarVivienda" prefHeight="26.0" prefWidth="82.0" text="Registrar" />
+      <Button fx:id="btnEliminar" layoutX="388.0" layoutY="537.0" mnemonicParsing="false" onAction="#eliminarVivienda" prefHeight="26.0" prefWidth="82.0" text="Eliminar" />
+      <Label fx:id="lblMensajes" layoutX="14.0" layoutY="558.0" prefHeight="26.0" prefWidth="253.0" />
+      <Label contentDisplay="RIGHT" layoutX="38.0" layoutY="34.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="46.0" prefWidth="315.0" text="Registro de viviendas" textOverrun="WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font size="30.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Label>
+      <TitledPane animated="false" collapsible="false" layoutX="20.0" layoutY="304.0" prefHeight="126.0" prefWidth="352.0" text="Datos de departamento">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="89.0" prefWidth="350.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Piso:" />
+                  <TextField fx:id="txtPiso" layoutX="108.0" layoutY="9.0" prefHeight="26.0" prefWidth="228.0" />
+                  <CheckBox fx:id="chkGastoComun" layoutX="175.0" layoutY="50.0" mnemonicParsing="false" text="Gasto común al dia" />
+                  <CheckBox fx:id="chkEstacionamiento" layoutX="175.0" layoutY="75.0" mnemonicParsing="false" text="Estacionamiento asignado" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TitledPane animated="false" layoutX="20.0" layoutY="447.0" prefHeight="71.0" prefWidth="352.0" text="Datos de la casa">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="590.0">
+               <children>
+                  <CheckBox fx:id="chkPatio" layoutX="175.0" layoutY="13.0" mnemonicParsing="false" text="Cuenta con patio" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+   </children>
+</AnchorPane>
