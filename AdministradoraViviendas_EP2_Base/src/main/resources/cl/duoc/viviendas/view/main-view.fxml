@@ -75,7 +75,7 @@
             </AnchorPane>
         </content>
       </TitledPane>
-      <TitledPane animated="false" layoutX="20.0" layoutY="447.0" prefHeight="71.0" prefWidth="352.0" text="Datos de la casa">
+      <TitledPane animated="false" collapsible="false" layoutX="20.0" layoutY="447.0" prefHeight="71.0" prefWidth="352.0" text="Datos de la casa">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="590.0">
                <children>

@@ -48,12 +48,22 @@ public class RegistroViviendasController {
         colCosto.setCellValueFactory(cellData -> {
             Vivienda v = cellData.getValue();
             double costo = 0.0;
-            if (v instanceof Departamento) {
-                costo = ((Departamento) v).calcularCostoArriendo();
-            } else if (v instanceof Casa) {
-                costo = ((Casa) v).calcularCostoArriendo();
+            if (v != null) {
+                costo = v.calcularCostoArriendo();
             }
             return new javafx.beans.property.SimpleObjectProperty<>((int)costo);
+        });
+
+        colCosto.setCellFactory(column -> new javafx.scene.control.TableCell<Vivienda, Integer>() {
+            @Override
+            protected void updateItem(Integer item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText(String.format("$%,d", item).replace(',', '.'));
+                }
+            }
         });
 
         listaViviendas.addAll(dao.leerDepartamentos());

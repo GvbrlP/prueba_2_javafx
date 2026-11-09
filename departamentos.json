@@ -1,10 +1,18 @@
 [
   {
     "piso": 8,
-    "gastoComunAlDia": true,
+    "gastoComunAlDia": false,
     "estacionamientoAsignado": false,
     "codigo": "PROP-D01",
     "superficie": 65.0,
     "habitaciones": 3
+  },
+  {
+    "piso": 3,
+    "gastoComunAlDia": true,
+    "estacionamientoAsignado": false,
+    "codigo": "PROP-D02",
+    "superficie": 48.0,
+    "habitaciones": 2
   }
 ]
